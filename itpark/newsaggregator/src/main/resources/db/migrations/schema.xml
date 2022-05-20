@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Anastasia Churyumova" id="Create-table-news">
+        <preConditions>
+            <not>
+                <tableExists tableName="NEWS"/>
+            </not>
+        </preConditions>
+        <createTable tableName="NEWS">
+            <column name="TITLE" type="VARCHAR(3)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
